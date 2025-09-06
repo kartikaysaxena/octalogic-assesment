@@ -10,7 +10,7 @@ const app = new Hono();
 
 // CORS middleware
 app.use("/*", cors({
-  origin: ["http://localhost:3000", "http://localhost:5173"], // React app URLs
+  origin: ["http://localhost:3000", "http://localhost:5173", "http://localhost:5174"], // React app URLs
   allowHeaders: ["Content-Type", "Authorization"],
   allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 }));
