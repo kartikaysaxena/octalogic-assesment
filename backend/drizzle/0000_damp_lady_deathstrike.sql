@@ -18,6 +18,7 @@ CREATE TABLE `vehicle_types` (
 	`created_at` text DEFAULT 'CURRENT_TIMESTAMP'
 );
 --> statement-breakpoint
+CREATE UNIQUE INDEX `vehicle_types_name_unique` ON `vehicle_types` (`name`);--> statement-breakpoint
 CREATE TABLE `vehicles` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL,
@@ -29,5 +30,3 @@ CREATE TABLE `vehicles` (
 	`created_at` text DEFAULT 'CURRENT_TIMESTAMP',
 	FOREIGN KEY (`type_id`) REFERENCES `vehicle_types`(`id`) ON UPDATE no action ON DELETE no action
 );
---> statement-breakpoint
-CREATE UNIQUE INDEX `vehicle_types_name_unique` ON `vehicle_types` (`name`);
