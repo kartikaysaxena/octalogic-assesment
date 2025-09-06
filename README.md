@@ -27,42 +27,6 @@ A full-stack vehicle rental booking system built with Bun, Drizzle ORM, SQLite, 
 - **Real-time Availability**: Check vehicle availability for selected dates
 - **Cost Calculation**: Automatic price calculation based on duration
 
-## 📁 Project Structure
-
-```
-vehicle-rental-system/
-├── README.md
-├── package.json              # Backend dependencies
-├── drizzle.config.ts         # Drizzle configuration
-├── sqlite.db                 # SQLite database (generated)
-├── src/
-│   ├── index.ts             # Main server file
-│   ├── db/
-│   │   ├── index.ts         # Database connection
-│   │   ├── schema.ts        # Database schema
-│   │   ├── migrate.ts       # Migration script
-│   │   └── seed.ts          # Database seeding script
-│   ├── services/
-│   │   └── bookingService.ts
-│   └── validation/
-│       └── schemas.ts       # Zod validation schemas
-└── frontend/
-    ├── package.json
-    ├── vite.config.ts
-    ├── tailwind.config.js
-    ├── index.html
-    └── src/
-        ├── main.tsx
-        ├── App.tsx
-        ├── index.css
-        ├── types/
-        │   └── index.ts
-        ├── services/
-        │   └── api.ts
-        └── components/
-            └── BookingForm.tsx
-```
-
 ## 🏗 Setup Instructions
 
 ### Prerequisites
@@ -71,8 +35,12 @@ vehicle-rental-system/
 
 ### Backend Setup
 
-1. **Clone and setup backend**:
+1. **Clone and setup backend (present in /backend folder)**:
 ```bash
+
+# Navigate to backend
+cd backend
+
 # Install backend dependencies
 bun install
 
@@ -95,14 +63,11 @@ The backend server will start on `http://localhost:8000`
 
 2. **Setup frontend**:
 ```bash
-# Navigate to frontend directory
-cd frontend
-
-# Install dependencies
-npm install
+# The frontend is at the base of this repository, to install dependencies run
+bun install
 
 # Start the development server
-npm run dev
+bun run dev
 ```
 
 The frontend will start on `http://localhost:3000`
@@ -186,21 +151,7 @@ The system comes pre-seeded with:
 - **Availability Check**: System prevents double-booking of vehicles
 - **Price Calculation**: Automatic calculation based on duration and daily rates
 
-## 🚀 Production Deployment
-
-### Backend
-```bash
-bun run build
-bun run start
-```
-
-### Frontend
-```bash
-npm run build
-# Serve the dist folder with your preferred web server
-```
-
-## 📋 Environment Variables
+## 📋 Environment Variables IMPORTANT
 
 Create a `.env` file in the root directory:
 ```env
